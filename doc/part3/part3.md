@@ -7,10 +7,7 @@ footer: "Geoscience Highschool Lesson"
 ---
 
 # 第三回「大気と海洋」
-
-- 大気の構造と成分
-- 気象現象
-- 海洋の構造と循環
+![bg cover opacity:.5](image.png)
 
 ---
 

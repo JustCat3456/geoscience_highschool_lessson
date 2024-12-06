@@ -4,11 +4,12 @@ theme: default
 class: normal
 paginate: true
 header: '第一回「個体地球」'
-title: '第一回'
-footer: 'Geoscience Highschool Lesson'
+footer: '高校地学基礎'
 ---
 
 # 第一回：「個体地球」
+
+![bg cover opacity:.5](image.png)
 
 ---
 
