@@ -117,7 +117,7 @@ footer: 'Geoscience Highschool Lesson'
 
 褶曲：地層が圧力をうけて応力で曲がったもの
 - 背斜：山の部分
-- 背斜：谷の部分
+- 向斜：谷の部分
 
 
 ---
