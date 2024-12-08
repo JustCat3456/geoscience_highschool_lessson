@@ -5,7 +5,11 @@ class: normal
 paginate: true
 header: '第一回「個体地球」'
 footer: '高校地学基礎'
+
 ---
+
+
+
 
 # 第一回：「個体地球」
 
