@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: default
+theme: UD
 class: normal
 paginate: true
 header: '第一回「個体地球」'
