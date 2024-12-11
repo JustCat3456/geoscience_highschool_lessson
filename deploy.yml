@@ -18,13 +18,13 @@ jobs:
           node-version: '16'  # Honkitで必要なNode.jsのバージョンを指定
 
       - name: Install dependencies
-        run: npm install  # Honkitと必要なパッケージをインストール
+        run: npm install
 
       - name: Build Honkit site
-        run: npm run build  # Honkitのビルドコマンドを実行
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_book  # Honkitの出力ディレクトリを指定
+          publish_dir: ./public
