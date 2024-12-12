@@ -1,31 +1,68 @@
-name: Deploy Honkit to GitHub Pages
+# HonKitのビルドとGitHub Pagesへのデプロイを行う
+name: build HonKit and deploy Pages
 
+# ワークフローのトリガーイベント：
 on:
+  # masterブランチへのpush
   push:
-    branches:
-      - main
+    branches: ["master"]
+
+  # Actionsタブから手動実行
+  workflow_dispatch:
+
+# GitHub Pagesへのデプロイを可能にするGITHUB_TOKENの権限をセット
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  # ビルド
+  build:
+    # ランナー
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      # Node.jsのセットアップ
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
-
+          node-version-file: 'package.json'
+          cache: 'npm'
+      # パッケージのインストール
       - name: Install dependencies
-        run: |
-          npm install -g honkit
-          npm install ./
-
-      - name: Build Honkit
+        run: npm ci
+      # HonKitのビルド
+      - name: build HonKit
         run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      # .htmlに空白が多いのでフォーマット
+      - name: format
+        # 以下コマンドでprettierが起動するようにpackage.jsonで設定しています
+        run: npm run format
+      # アーティファクトのアップロード
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_book
+          # _book/以下をアップロード
+          path: '_book/'
+
+  # デプロイ
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
