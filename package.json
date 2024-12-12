@@ -13,6 +13,8 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
+    "honkit-plugin-mathjax-cdn": "^1.0.0"
   }
 }
