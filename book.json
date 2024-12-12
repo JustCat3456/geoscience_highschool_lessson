@@ -1,8 +1,5 @@
 {
     "language": "ja",
-    "plugins": [
-    "../honkit-plugin-mathjax-cdn"
-  ],
   "scripts": {
     "serve": "honkit serve",
     "build": "honkit build"
