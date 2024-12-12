@@ -7,8 +7,11 @@
     "doc": "doc"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "honkit bulid",
+    "serve": "honkit serve"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "plugins": ["mathjax.js"]
 }
