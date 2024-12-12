@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install honkit  # honkit をインストール
-          npm install undici@5.21.0 # undici をダウングレード
+          npm install cheerio@latest
           npm install
           
 
