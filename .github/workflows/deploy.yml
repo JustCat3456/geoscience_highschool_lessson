@@ -3,7 +3,7 @@ name: Deploy Honkit to GitHub Pages
 on:
   push:
     branches:
-      - main  # デプロイするブランチ名
+      - main
 
 jobs:
   deploy:
@@ -14,20 +14,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # 適宜バージョンを変更してください
+          node-version: '16'
 
       - name: Install dependencies
         run: |
-          npm install honkit@latest  # honkit をインストール
-          npm install cheerio@latest
           npm install
-          
 
       - name: Build Honkit
-        run: npm run build # package.json の scripts に "build": "honkit build" を追加してください
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_book  # Honkit の出力ディレクトリ
+          publish_dir: ./_book
