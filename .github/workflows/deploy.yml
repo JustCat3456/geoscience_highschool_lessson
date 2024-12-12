@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install honkit  # Honkitと必要なパッケージをインストール
-        run: npm install ./ # 依存関係をインストール
+         # 依存関係をインストール
 
       - name: Build Honkit site
         run: npm run build  # Honkitのビルドコマンドを実行
