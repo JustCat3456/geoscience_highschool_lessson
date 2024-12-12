@@ -1,35 +1,31 @@
-name: Deploy Honkit Site to GitHub Pages
+name: Deploy Honkit to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # デプロイするブランチを指定
+      - main  # デプロイするブランチ名
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Honkitで必要なNode.jsのバージョンを指定
+          node-version: '16' # 適宜バージョンを変更してください
 
-      - name: Install honkit
-        run: npm install honkit  # Honkitと必要なパッケージをインストール
-         # 依存関係をインストール
+      - name: Install dependencies
+        run: |
+          npm install honkit  # honkit をインストール
+          npm install
 
-      - name: Install honkit plugins
-        run: npm install ./  # Honkitのプラグインをインストール
-         # 依存関係をインストール
-
-      - name: Build Honkit site
-        run: honkit build  # Honkitのビルドコマンドを実行
+      - name: Build Honkit
+        run: npm run build # package.json の scripts に "build": "honkit build" を追加してください
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_book  # Honkitの出力ディレクトリを指定
+          publish_dir: ./_book  # Honkit の出力ディレクトリ
