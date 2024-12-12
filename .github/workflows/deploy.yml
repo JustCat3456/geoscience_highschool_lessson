@@ -18,7 +18,8 @@ jobs:
           node-version: '16'  # Honkitで必要なNode.jsのバージョンを指定
 
       - name: Install dependencies
-        run: npm install  # Honkitと必要なパッケージをインストール
+        run: npm install honkit  # Honkitと必要なパッケージをインストール
+        run: npm install ./ # 依存関係をインストール
 
       - name: Build Honkit site
         run: npm run build  # Honkitのビルドコマンドを実行
