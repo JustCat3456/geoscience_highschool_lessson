@@ -18,7 +18,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install honkit  # honkit をインストール
+          npm install honkit@latest  # honkit をインストール
           npm install cheerio@latest
           npm install
           
