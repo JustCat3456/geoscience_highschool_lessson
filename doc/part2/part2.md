@@ -3,7 +3,7 @@ marp: true
 theme: default
 class: normal
 paginate: true
-header: '第一回「個体地球」'
+header: '第2回「岩石鉱物と地層」'
 footer: 'Geoscience Highschool Lesson'
 ---
 

@@ -2,11 +2,11 @@
 marp: true
 theme: default
 paginate: true
-header: "第三回「大気と海洋」"
+header: "第3回「大気と海洋」"
 footer: "Geoscience Highschool Lesson"
 ---
 
-# 第三回「大気と海洋」
+# 第3回「大気と海洋」
 ![bg cover opacity:.5](image.png)
 
 ---

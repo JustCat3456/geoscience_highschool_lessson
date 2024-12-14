@@ -3,11 +3,11 @@ marp: true
 theme: default
 class: normal
 paginate: true
-header: '第一回「個体地球」'
+header: '第4回「宇宙」'
 footer: 'Geoscience Highschool Lesson'
 ---
 
-# 第四回「宇宙」
+# 第4回「宇宙」
 ![bg cover opacity:.5](image.png)
 
 ---

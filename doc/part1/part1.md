@@ -3,7 +3,7 @@ marp: true
 theme: UD
 class: normal
 paginate: true
-header: '第一回「個体地球」'
+header: '第1回「個体地球」'
 footer: '高校地学基礎'
 
 ---
@@ -11,7 +11,7 @@ footer: '高校地学基礎'
 
 
 
-# 第一回：「個体地球」
+# 第1回：「個体地球」
 
 ![bg cover opacity:.5](image.png)
 
