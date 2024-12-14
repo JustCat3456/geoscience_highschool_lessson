@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: default
+theme: UD
 class: normal
 paginate: true
 header: '第2回「岩石鉱物と地層」'

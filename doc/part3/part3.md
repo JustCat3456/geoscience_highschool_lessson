@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: default
+theme: UD
 paginate: true
 header: "第3回「大気と海洋」"
 footer: "Geoscience Highschool Lesson"
